@@ -8,21 +8,23 @@ import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import kr.co.mlec.form.MemberVO;
 
+//@ResponseBody 대신에 하나로 합쳐서 쓰는게 바로?!
+@RestController
 @RequestMapping("/ajax")
-@Controller
 public class ResBodyController {
 
+//	@ResponseBody
 	@RequestMapping("/resBody.do")
-	@ResponseBody
 	public String resStringBody() {
 		return "OK! 성공쓰!";
 	}
 	
+//	@ResponseBody
 	@RequestMapping("/resBody.json")
-	@ResponseBody
 	public Map<String, String> resJsonBody() {
 		Map<String, String> result = new HashMap<>();
 		result.put("id", "hari");
@@ -31,8 +33,8 @@ public class ResBodyController {
 		return result;
 	}
 	
+//	@ResponseBody
 	@RequestMapping("/resVOBody.json")
-	@ResponseBody
 	public MemberVO resJsonVOBody() {
 		MemberVO vo = new MemberVO();
 		vo.setId("hari");
@@ -41,8 +43,8 @@ public class ResBodyController {
 		return vo;
 	}
 	
+//	@ResponseBody
 	@RequestMapping("/resStringListBody.json")
-	@ResponseBody
 	public List<String> resJsonStringListBody() {
 		List<String> list = new ArrayList<>();
 		for(int i=1; i<4; i++) {
@@ -51,8 +53,8 @@ public class ResBodyController {
 		return list;
 	}
 	
+//	@ResponseBody
 	@RequestMapping("/resVOListBody.json")
-	@ResponseBody
 	public List<MemberVO> resJsonVOListBody() {
 		List<MemberVO> list = new ArrayList<>();
 		

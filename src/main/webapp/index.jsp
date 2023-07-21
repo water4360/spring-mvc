@@ -35,6 +35,11 @@
 	<a href="<%=request.getContextPath()%>/ajax/resVOListBody.json">
 	JSON List(VO) 응답
 	</a>
+	<br>
+	<a href="<%=request.getContextPath()%>/file/uploadForm.do">
+	파일업로드
+	</a>
+	
 	
 </body>
 </html>
